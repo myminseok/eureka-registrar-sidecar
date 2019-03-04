@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "release!!!"
+export MKIM_release=test
