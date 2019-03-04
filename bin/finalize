@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "finalize"
+export MKIM2=test
