@@ -4,4 +4,4 @@ config:
   java_opts:
     system_properties:  { "SYSTEM_AGENT_PATH": "b"}
    # javaagents: [ "$SYSTEM_AGENT_PATH/pinpoint-bootstrap.jar" ]
-   # options: { "pinpoint.agentId":"pinpoint.agentId.id" }
+   options: { "pinpoint.applicationName":"pinpoint.applicationName" }
