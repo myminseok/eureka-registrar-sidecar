@@ -41,8 +41,10 @@ echo "MKIM!!!"
 cp $ROOT_DIR/lib/config.yml $DEPS_DIR/$INDEX_DIR/config.yml
 echo "$DEPS_DIR/$INDEX_DIR"
 cat $DEPS_DIR/$INDEX_DIR/config.yml
-cd $DEPS_DIR/$INDEX_DIR
-wget https://github.com/myminseok/pinpoint_agent_repo/blob/master/pinpoint-agent-1.7.4-SNAPSHOT.jar?raw=true
-wget https://raw.githubusercontent.com/myminseok/pinpoint_agent_repo/master/pinpoint.config
+mkdir -p $DEPS_DIR/$INDEX_DIR/pinpoint
+cd $DEPS_DIR/$INDEX_DIR/pinpoint
+wget https://github.com/myminseok/pinpoint_agent_repo/blob/master/pinpoint-agent-1.7.4-SNAPSHOT.zip?raw=true
+tar xf pinpoint-agent-1.7.4-SNAPSHOT.zip
+#wget https://raw.githubusercontent.com/myminseok/pinpoint_agent_repo/master/pinpoint.config
 
 
