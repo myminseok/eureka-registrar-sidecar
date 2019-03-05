@@ -24,6 +24,9 @@ CACHE_DIR=$2
 DEPS_DIR=$3
 INDEX_DIR=$4
 
+set -e
+echo "starting multi-buildpack"
+
 # put code in <deps>/<index>
 
 cp $ROOT_DIR/lib/eureka_registrar.py $DEPS_DIR/$INDEX_DIR
@@ -37,7 +40,7 @@ cp $ROOT_DIR/lib/eureka_registrar.sh $DEPS_DIR/$INDEX_DIR/profile.d
 sed "s/__BUILDPACK_INDEX__/$INDEX_DIR/g" $DEPS_DIR/$INDEX_DIR/profile.d/eureka_registrar.sh -i
 chmod +x $DEPS_DIR/$INDEX_DIR/profile.d/eureka_registrar.sh
 
-echo "MKIM!!!"
+
 cp $ROOT_DIR/lib/config.yml $DEPS_DIR/$INDEX_DIR/config.yml
 echo "$DEPS_DIR/$INDEX_DIR"
 cat $DEPS_DIR/$INDEX_DIR/config.yml
