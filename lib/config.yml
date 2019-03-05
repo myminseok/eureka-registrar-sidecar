@@ -1,3 +1,4 @@
 name: eureka-registerar-sidecar 
 config: 
-  environment_variables: 
+  environment_variables:
+  - a: b
