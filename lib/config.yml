@@ -1,5 +1,7 @@
 name: eureka-registerar-sidecar 
 config: 
-  environment_variables: { "a": "b"}
-  java_opts.javaagents: {"$CF_INSTANCE_KEY"}
-  java_opts.options: { "pinpoint.agentId":"pinpoint.agentId.id" }
+  environment_variables: { "ENV_AGENT_PATH": "b"}
+  java_opts:
+    system_properties:  { "SYSTEM_AGENT_PATH": "b"}
+    javaagents: {"$CF_INSTANCE_KEY"}
+    options: { "pinpoint.agentId":"pinpoint.agentId.id" }
