@@ -1,1 +1,2 @@
- 	multi-buildpack=test-buildpack,environment_variables={MKIM2=mkim2}
+multi-buildpack:test-buildpack
+environment_variables: MKIM2=mkim2
