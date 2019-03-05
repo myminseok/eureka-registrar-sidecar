@@ -3,5 +3,5 @@ config:
   environment_variables: { "AGENT_PATH": "/home/vcap/deps/0/pinpoint"}
   java_opts:
     system_properties:  { "AGENT_PATH": "/home/vcap/deps/0/pinpoint"}
-    javaagents: [ "$AGENT_PATH/pinpoint-agent-1.7.4-SNAPSHOT.jar" ]
+    javaagents: [ "/home/vcap/deps/0/pinpoint/pinpoint-bootstrap-1.7.4-SNAPSHOT.jar" ]
     options: { "pinpoint.agentId":"pinpoint", "pinpoint.applicationName":"pinpoint.applicationName"}
