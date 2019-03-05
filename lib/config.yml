@@ -1,2 +1,2 @@
 ---
-environment_variables: MKIM2=mkim2
+environment_variables={MKIM2=mkim2}
