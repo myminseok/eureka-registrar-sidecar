@@ -39,5 +39,6 @@ chmod +x $DEPS_DIR/$INDEX_DIR/profile.d/eureka_registrar.sh
 
 echo "MKIM!!!"
 cp $ROOT_DIR/bin/config.yml $DEPS_DIR/$INDEX_DIR/config.yml
-cat $DEPS_DIR/$INDEX_DIR/config.yml
+echo "$DEPS_DIR/$INDEX_DIR"
+#cat $DEPS_DIR/$INDEX_DIR/config.yml
 
