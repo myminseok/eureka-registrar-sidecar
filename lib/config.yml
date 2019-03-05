@@ -2,6 +2,6 @@ name: eureka-registerar-sidecar
 config: 
   environment_variables: { "ENV_AGENT_PATH": "b"}
   java_opts:
-    system_properties:  { "SYSTEM_AGENT_PATH": "b"}
-    javaagents: [ "/home/vcap/deps/0/pinpoint-agent-1.7.4-SNAPSHOT.jar" ]
+    system_properties:  { "AGENT_PATH": "home/vcap/deps/0/pinpoint"}
+    javaagents: [ "$AGENT_PATH/pinpoint-agent-1.7.4-SNAPSHOT.jar" ]
     options: { "pinpoint.agentId":"pinpoint", "pinpoint.applicationName":"pinpoint.applicationName"}
