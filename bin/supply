@@ -41,17 +41,16 @@ sed "s/__BUILDPACK_INDEX__/$INDEX_DIR/g" $DEPS_DIR/$INDEX_DIR/profile.d/eureka_r
 chmod +x $DEPS_DIR/$INDEX_DIR/profile.d/eureka_registrar.sh
 
 
-echo "Configuring multi buildpack env"
+echo "** Configuring multi buildpack"
 cp $ROOT_DIR/lib/config.yml $DEPS_DIR/$INDEX_DIR/config.yml
-echo "VCAP_APPLICATION: $VCAP_APPLICATION"
 APPLICATION_NAME=`echo $VCAP_APPLICATION | jq  .application_name -r`
-echo "APPLICATION_NAME: $APPLICATION_NAME"
+echo "** APPLICATION_NAME: $APPLICATION_NAME"
 sed -i "s/__PINPOINT.APP_NAME__/$APPLICATION_NAME-\$INSTANCE_INDEX/g" $DEPS_DIR/$INDEX_DIR/config.yml
 cat $DEPS_DIR/$INDEX_DIR/config.yml
 
 
 
-echo "Downloading  https://github.com/myminseok/pinpoint_agent_repo/blob/master/pinpoint-agent-1.7.4-SNAPSHOT.zip?raw=true -O pinpoint-agent-1.7.4-SNAPSHOT.zip"
+echo "** Downloading  https://github.com/myminseok/pinpoint_agent_repo/blob/master/pinpoint-agent-1.7.4-SNAPSHOT.zip?raw=true -O pinpoint-agent-1.7.4-SNAPSHOT.zip"
 mkdir -p $DEPS_DIR/$INDEX_DIR/pinpoint
 cd $DEPS_DIR/$INDEX_DIR/pinpoint
 wget -q https://github.com/myminseok/pinpoint_agent_repo/blob/master/pinpoint-agent-1.7.4-SNAPSHOT.zip?raw=true -O pinpoint-agent-1.7.4-SNAPSHOT.zip > /dev/null 2>&1
@@ -59,7 +58,7 @@ unzip pinpoint-agent-1.7.4-SNAPSHOT.zip > /dev/null 2>&1
 rm -rf pinpoint-agent-1.7.4-SNAPSHOT.zip
 rm -rf pinpoint.config
 
-echo "Downloading https://raw.githubusercontent.com/myminseok/pinpoint_agent_repo/master/pinpoint.config"
+echo "** Downloading https://raw.githubusercontent.com/myminseok/pinpoint_agent_repo/master/pinpoint.config"
 wget -q https://raw.githubusercontent.com/myminseok/pinpoint_agent_repo/master/pinpoint.config
 
-
+echo "** Configuring multi buildpack Completed" 
