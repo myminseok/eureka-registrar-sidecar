@@ -38,7 +38,7 @@ sed "s/__BUILDPACK_INDEX__/$INDEX_DIR/g" $DEPS_DIR/$INDEX_DIR/profile.d/eureka_r
 chmod +x $DEPS_DIR/$INDEX_DIR/profile.d/eureka_registrar.sh
 
 echo "MKIM!!!"
-#cp $ROOT_DIR/lib/config.yml $DEPS_DIR/$INDEX_DIR/config.yml
+cp $ROOT_DIR/lib/config.yml $DEPS_DIR/$INDEX_DIR/config.yml
 echo "$DEPS_DIR/$INDEX_DIR"
-#cat $DEPS_DIR/$INDEX_DIR/config.yml
+cat $DEPS_DIR/$INDEX_DIR/config.yml
 
