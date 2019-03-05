@@ -44,8 +44,7 @@ chmod +x $DEPS_DIR/$INDEX_DIR/profile.d/eureka_registrar.sh
 echo "Configuring multi buildpack env"
 cp $ROOT_DIR/lib/config.yml $DEPS_DIR/$INDEX_DIR/config.yml
 echo "VCAP_APPLICATION: $VCAP_APPLICATION"
-echo "INSTANCE_INDEX: $INSTANCE_INDEX"
-APPLICATION_NAME=`echo $VCAP_APPLICATION | jq  .application_name`
+APPLICATION_NAME=`echo $VCAP_APPLICATION | jq  .application_name -r`
 echo "APPLICATION_NAME: $APPLICATION_NAME"
 sed -i "s/__PINPOINT.APP_NAME__/$APPLICATION_NAME-\$INSTANCE_INDEX/g" $DEPS_DIR/$INDEX_DIR/config.yml
 cat $DEPS_DIR/$INDEX_DIR/config.yml
