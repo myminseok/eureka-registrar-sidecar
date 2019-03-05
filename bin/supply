@@ -46,8 +46,8 @@ echo "$DEPS_DIR/$INDEX_DIR"
 cat $DEPS_DIR/$INDEX_DIR/config.yml
 mkdir -p $DEPS_DIR/$INDEX_DIR/pinpoint
 cd $DEPS_DIR/$INDEX_DIR/pinpoint
-wget https://github.com/myminseok/pinpoint_agent_repo/blob/master/pinpoint-agent-1.7.4-SNAPSHOT.zip?raw=true -O pinpoint-agent-1.7.4-SNAPSHOT.zip
-unzip pinpoint-agent-1.7.4-SNAPSHOT.zip
+wget https://github.com/myminseok/pinpoint_agent_repo/blob/master/pinpoint-agent-1.7.4-SNAPSHOT.zip?raw=true -O pinpoint-agent-1.7.4-SNAPSHOT.zip > /dev/null 2>&1
+unzip pinpoint-agent-1.7.4-SNAPSHOT.zip > /dev/null 2>&1
 rm -rf pinpoint-agent-1.7.4-SNAPSHOT.zip
 rm -rf pinpoint.config
 wget https://raw.githubusercontent.com/myminseok/pinpoint_agent_repo/master/pinpoint.config
